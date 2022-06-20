@@ -4,7 +4,7 @@ var Dage = {
   _() {
     Dage.p = [...document.querySelectorAll("[data-page]")];
     Dage.p.forEach(function(el) {
-      
+      if(!el.getAttribute("data-active")) 
     });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
@@ -12,13 +12,13 @@ var Dage = {
       });
     })() : 0);
   },
-  $$: this._(),
   f1(el) {
     el.removeAttribute("hidden");
   },
   f0(el) {
     el.setAttribute("hidden", "");
   },
+  $$: this._(),
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
