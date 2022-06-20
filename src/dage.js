@@ -44,6 +44,12 @@ var Dage = {
       if(n == name) Dage.f0(el);
     });
   },
+  silent() {
+    this._s = true;
+  },
+  notify() {
+    this._s = false;
+  }
   setShowHandler(f) {
     this.f1 = f;
   },
