@@ -36,6 +36,7 @@ var Dage = {
       else Dage.f0(el);
     });
     if(this.$[name] && !this._s) this.$[name].call(this);
+    this.a = name;
   },
   show(name) {
     if(this.$[name] && !this._s) this.$[name].call(this);
