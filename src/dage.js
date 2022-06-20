@@ -1,10 +1,4 @@
 var Dage = {
-  p: [...document.querySelectorAll("[data-page]")],
-  __: window ? (function(){
-    document.querySelectorAll("[data-navigate]").forEach(function(el) {
-      el.onclick = Dage.navigate;
-    });
-  })() : 0,
   $: {},
   _() {
     Dage.p = [...document.querySelectorAll("[data-page]")];
@@ -14,6 +8,7 @@ var Dage = {
       });
     })() : 0);
   },
+  $$: this._(),
   f1(el) {
     el.removeAttribute("hidden");
   },
