@@ -161,7 +161,7 @@ Dage.setNavigationHandler(function(el) {
   // default
   // navigate when element with attribute data-navigate clicked
   el.addEventListener("click", function(e) {
-    Dage.navigate(e.t.getAttribute("data-navigate"));
+    Dage.navigate(e.target.getAttribute("data-navigate"));
   });
 });
 ```
