@@ -3,10 +3,9 @@ var Dage = {
   l: [],
   _s: false,
   _() {
-    Dage.p = document.querySelectorAll("[data-page]").map(function(el) {
-      if(el.getAttribute("data-active") != null) Dage.f1(el);
-      else Dage.f0(el);
-      return el;
+    Dage.p = document.querySelectorAll("[data-page]");
+    this.l.forEach(function(el) {
+      Dage.p.push(el);
     });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
@@ -23,6 +22,7 @@ var Dage = {
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
+    this.l.push(el);
   },
   navigate(name) {
     this.p.forEach(function(el) {
