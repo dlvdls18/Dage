@@ -35,7 +35,7 @@ var Dage = {
     if(this.$[name] && !this._s) this.$[name].call(this);
     this.p.forEach(function(el) {
       var n = el.getAttribute("data-page");
-      if(n == name) 
+      if(n == name) Dage.f1(el);
     });
   },
   setShowHandler(f) {
