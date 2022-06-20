@@ -61,6 +61,16 @@ Dage.add(element, name);
 Dage.update();
 ```
 
+### Get all pages that assigned using `Dage.add`
+```js
+Dage.l;
+```
+
+### Get active page
+```js
+Dage.a;
+```
+
 ## Navigation
 ### Navigate to page
 ```js
@@ -122,7 +132,7 @@ Dage.$;
 // fired when navigated and the current page matches the name
 Dage.setShowHandler(function(el) {
   // default
-  el.removeAttribute("hidden");
+  el.style.display = "block';
 });
 ```
 
@@ -131,7 +141,7 @@ Dage.setShowHandler(function(el) {
 // fired when navigated and the current page does not match the name
 Dage.setHideHandler(function(el) {
   // default
-  el.setAttribute("hidden", "");
+  el.style.display = "none";
 });
 ```
 
@@ -143,4 +153,20 @@ Dage.f1;
 ### Get hide handler
 ```js
 Dage.f0;
+```
+
+### Set navigation handler
+```js
+Dage.setNavigationHandler(function(el) {
+  // default
+  // navigate when element with attribute data-navigate clicked
+  el.addEventListener("click", function(e) {
+    Dage.navigate(e.t.getAttribute("data-navigate"));
+  });
+});
+```
+
+### Get navigation handler
+```js
+Dage.nh;
 ```
