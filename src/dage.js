@@ -7,6 +7,10 @@ var Dage = {
     this.l.forEach(function(el) {
       Dage.p.push(el);
     });
+    Dage.p.forEach(function(el) {
+      if(el.getAttribute("data-active")) Dage
+f
+    });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
         el.onclick = Dage.navigate;
