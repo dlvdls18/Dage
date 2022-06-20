@@ -17,7 +17,7 @@ Dage.navigate("page2");
 Manage pages without JavaScript? No problem.
 
 ```html
-<div data-page="page1" data-active>
+<div data-page="page1" data-active="">
   Page 1...
   <button data-navigate="page2">Go to page 2</button>
 </div>
@@ -33,4 +33,106 @@ Manage pages without JavaScript? No problem.
 ```
 
 # Documentation
+## Page
+### Assigning element as page
+```html
+<div data-page="MyPage">
+  Hello
+</div>
+```
 
+### Show the element by default
+```html
+<div data-page="MyPage" data-active="">
+  Hello
+</div>
+```
+
+### Add a page
+```js
+Dage.add(element, name);
+```
+
+### Reselect and update all `data-page` and `data-navigate` &amp; set all pages default visibility
+```js
+Dage.update();
+```
+
+## Navigation
+### Navigate to page
+```js
+Dage.navigate(name);
+```
+
+### Show a page
+```js
+Dage.show(name);
+```
+
+### Hide a page
+```js
+Dage.hide(name);
+```
+
+### Listener
+### Add page listener
+```js
+// will not fired when silent
+Dage.on(name, function(el) {
+  ...
+});
+```
+
+### Remove page listener
+```js
+Dage.off(name);
+```
+
+### Turn silent on
+```js
+Dage.silent();
+```
+
+### Turn silent off
+```js
+Dage.notify();
+```
+
+### Get silent state
+```js
+Dage.isSilent();
+```
+
+### Get all listener
+```js
+Dage.$;
+```
+
+## Handler
+### Set show handler
+```js
+// fired when navigated and the current page matches the name
+Dage.setShowHandler(function(el) {
+  // default
+  el.removeAttribute("hidden");
+});
+```
+
+### Set hide handler
+```js
+// fired when navigated and the current page does not match the name
+Dage.setHideHandler(function(el) {
+  // default
+  el.setAttribute("hidden", "");
+});
+```
+
+### Get show handler
+```js
+Dage.f1;
+```
+
+### Get hide handler
+```js
+Dage.f0;
+```
