@@ -22,6 +22,9 @@ var Dage = {
   f0(el) {
     el.setAttribute("hidden", "");
   },
+  nh(el) {
+    Dage.navigate(el.getAttribute("data-navigate"));
+  },
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
