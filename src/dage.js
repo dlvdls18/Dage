@@ -68,5 +68,5 @@ var Dage = {
   off(name) {
     this.$[name] = undefined;
   },
-  $$: this._()
+  $$: 
 }
