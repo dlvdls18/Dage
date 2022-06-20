@@ -77,6 +77,11 @@ Dage.show(name);
 Dage.hide(name);
 ```
 
+### Get all pages
+```js
+Dage.
+```
+
 ### Listener
 ### Add page listener
 ```js
