@@ -2,10 +2,10 @@ var Dage = {
   $: {},
   _s: false,
   _() {
-    Dage.p = [...document.querySelectorAll("[data-page]")];
-    Dage.p.forEach(function(el) {
+    Dage.p = [...document.querySelectorAll("[data-page]")].map(function(el) {
       if(el.getAttribute("data-active") == null) Dage.f0(el);
       else Dage.f1(el);
+      return el;
     });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
