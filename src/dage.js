@@ -29,10 +29,10 @@ var Dage = {
       if(n == name) Dage.f1(el);
       else Dage.f0(el);
     });
-    if(this.$[name]) this.$[name].call(this);
+    if(this.$[name] && !this._s) this.$[name].call(this);
   },
   show(name) {
-    
+    if(this.$[name] && !this._s) this.$[name].call(this);
   },
   setShowHandler(f) {
     this.f1 = f;
