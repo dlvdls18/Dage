@@ -8,10 +8,10 @@ var Dage = {
     this.l.forEach(function(el) {
       Dage.p.push(el);
     });
-    /*Dage.p.forEach(function(el) {
+    Dage.p.forEach(function(el) {
       if(el.getAttribute("data-active") != null) Dage.f1(el);
       else Dage.f0(el);
-    });*/
+    });
     document.querySelectorAll("[data-navigate]").forEach(function(el) {
       Dage.nh(el);
     });
@@ -75,6 +75,9 @@ var Dage = {
   },
   off(name) {
     this.$[name] = undefined;
+  },
+  setNavigationHandler(f) {
+    this.nh = f;
   }
 }
 
