@@ -23,7 +23,9 @@ var Dage = {
     el.style.display = "none";
   },
   nh(el) {
-    Dage.navigate(el.getAttribute("data-navigate"));
+    el.addEventListener("click", function(e) {
+      Dage.navigate(e.target.getAttribute("data-navigate"));
+    });
   },
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
