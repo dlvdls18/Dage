@@ -4,7 +4,8 @@ var Dage = {
   _() {
     Dage.p = [...document.querySelectorAll("[data-page]")];
     Dage.p.forEach(function(el) {
-      if(!el.getAttribute("data-active")) 
+      if(!el.getAttribute("data-active")) Dage.f0(el);
+      else Dage.f1(el);
     });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
