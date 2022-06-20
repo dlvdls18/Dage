@@ -1,4 +1,7 @@
 # Dage
+
+![Dage](dage.png)
+
 Basic HTML &amp; JavaScript Page Management.
 Use `Dage` to your Single Page Application (SPA) easily.
 
