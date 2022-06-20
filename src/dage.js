@@ -1,5 +1,6 @@
 var Dage = {
   $: {},
+  _s: false,
   _() {
     Dage.p = [...document.querySelectorAll("[data-page]")];
     Dage.p.forEach(function(el) {
@@ -32,7 +33,7 @@ var Dage = {
   },
   show(name) {
     
-  }
+  },
   setShowHandler(f) {
     this.f1 = f;
   },
