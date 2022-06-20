@@ -2,7 +2,7 @@ var Dage = {
   $: {},
   _s: false,
   _() {
-    Dage.p = [...document.querySelectorAll("[data-page]")].map(function(el) {
+    Dage.p = document.querySelectorAll("[data-page]").map(function(el) {
       if(el.getAttribute("data-active") != null) Dage.f1(el);
       else Dage.f0(el);
       return el;
