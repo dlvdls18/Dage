@@ -49,7 +49,10 @@ var Dage = {
   },
   notify() {
     this._s = false;
-  }
+  },
+  isSilent() {
+    return eval(new String(this._s));
+  },
   setShowHandler(f) {
     this.f1 = f;
   },
