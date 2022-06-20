@@ -70,4 +70,4 @@ var Dage = {
   }
 }
 
-Dage.update();
+Dage._();
