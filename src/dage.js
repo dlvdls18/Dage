@@ -8,7 +8,7 @@ var Dage = {
       Dage.p.push(el);
     });
     Dage.p.forEach(function(el) {
-      if(el.getAttribute("data-active")) Dage.f1(el);
+      if(el.getAttribute("data-active") != null) Dage.f1(el);
       else Dage.f0(el);
     });
     Dage.__ = (window ? (function(){
