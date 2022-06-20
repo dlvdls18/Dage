@@ -13,7 +13,7 @@ var Dage = {
       else Dage.f0(el);
     });*/
     document.querySelectorAll("[data-navigate]").forEach(function(el) {
-      el.onclick = Dage.navigate;
+      Dage.nh(el);
     });
   },
   f1(el) {
