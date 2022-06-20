@@ -12,11 +12,9 @@ var Dage = {
       if(el.getAttribute("data-active") != null) Dage.f1(el);
       else Dage.f0(el);
     });*/
-    Dage.__ = (window ? (function(){
-      document.querySelectorAll("[data-navigate]").forEach(function(el) {
-        el.onclick = Dage.navigate;
-      });
-    })() : 0);
+    document.querySelectorAll("[data-navigate]").forEach(function(el) {
+      el.onclick = Dage.navigate;
+    });
   },
   f1(el) {
     el.removeAttribute("hidden");
