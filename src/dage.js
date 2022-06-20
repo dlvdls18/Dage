@@ -69,3 +69,5 @@ var Dage = {
     this.$[name] = undefined;
   }
 }
+
+Dage.update();
