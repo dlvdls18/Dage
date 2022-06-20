@@ -79,6 +79,7 @@ Dage.navigate(name);
 
 ### Show a page
 ```js
+// Active page will not change when using this method
 Dage.show(name);
 ```
 
@@ -89,7 +90,7 @@ Dage.hide(name);
 
 ### Get all pages
 ```js
-Dage.
+Dage.p;
 ```
 
 ### Listener
