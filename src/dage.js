@@ -17,10 +17,10 @@ var Dage = {
     });
   },
   f1(el) {
-    el.removeAttribute("hidden");
+    el.style.display = "block";
   },
   f0(el) {
-    el.setAttribute("hidden", "");
+    el.style.display = "none";
   },
   nh(el) {
     Dage.navigate(el.getAttribute("data-navigate"));
