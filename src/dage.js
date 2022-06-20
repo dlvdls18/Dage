@@ -2,6 +2,9 @@ var Dage = {
   $: {},
   _() {
     Dage.p = [...document.querySelectorAll("[data-page]")];
+    Dage.p.forEach(function(el) {
+      
+    });
     Dage.__ = (window ? (function(){
       document.querySelectorAll("[data-navigate]").forEach(function(el) {
         el.onclick = Dage.navigate;
@@ -27,6 +30,9 @@ var Dage = {
     });
     if(this.$[name]) this.$[name].call(this);
   },
+  show(name) {
+    
+  }
   setShowHandler(f) {
     this.f1 = f;
   },
