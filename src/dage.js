@@ -56,7 +56,7 @@ var Dage = {
     this._s = false;
   },
   isSilent() {
-    return eval(new String(this._s));
+    return eval(`${this._s}``);
   },
   setShowHandler(f) {
     this.f1 = f;
