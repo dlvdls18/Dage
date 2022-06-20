@@ -38,6 +38,9 @@ var Dage = {
       if(n == name) Dage.f1(el);
     });
   },
+  hide(name) {
+    
+  },
   setShowHandler(f) {
     this.f1 = f;
   },
