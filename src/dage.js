@@ -25,7 +25,7 @@ var Dage = {
   },
   navigate(name) {
     this.p.forEach(function(el) {
-      var n = el.getAttribute("data-lage");
+      var n = el.getAttribute("data-page");
       if(n == name) Dage.f1(el);
       else Dage.f0(el);
     });
@@ -33,6 +33,10 @@ var Dage = {
   },
   show(name) {
     if(this.$[name] && !this._s) this.$[name].call(this);
+    this.p.forEach(function(el) {
+      var n = el.getAttribute("data-page");
+      if(n == name) 
+    });
   },
   setShowHandler(f) {
     this.f1 = f;
