@@ -39,7 +39,10 @@ var Dage = {
     });
   },
   hide(name) {
-    
+    this.p.forEach(function(el) {
+      var n = el.getAttribute("data-page");
+      if(n == name) Dage.f0(el);
+    });
   },
   setShowHandler(f) {
     this.f1 = f;
