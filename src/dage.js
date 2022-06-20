@@ -1,5 +1,6 @@
 var Dage = {
   $: {},
+  l: [],
   _s: false,
   _() {
     Dage.p = document.querySelectorAll("[data-page]").map(function(el) {
