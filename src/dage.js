@@ -18,7 +18,6 @@ var Dage = {
   f0(el) {
     el.setAttribute("hidden", "");
   },
-  $$: this._(),
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
@@ -67,5 +66,6 @@ var Dage = {
   },
   off(name) {
     this.$[name] = undefined;
-  }
+  },
+  $$: this._()
 }
