@@ -5,9 +5,10 @@ var Dage = {
   a: null,
   _s: false,
   _() {
-    Dage.p = document.querySelectorAll("[data-page]");
+    Dage.p = document.querySelectorAll("[data-page]:not([data-local])");
     this.l.forEach(function(p) {
       p[0].setAttribute("data-page", p[1]);
+      p[0].setAttribute("data-local", "");
       Dage.p.push(p[0]);
     });
     Dage.p.forEach(function(el) {
