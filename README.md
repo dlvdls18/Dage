@@ -88,6 +88,12 @@ Dage.l;
 Dage.a;
 ```
 
+### Set local page default visibility to active
+```js
+// only work with pages created with Dage.add
+Dage.setPageActive(name);
+```
+
 ## Navigation
 ### Navigate to page
 ```js
