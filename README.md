@@ -10,10 +10,11 @@ Navigate to any page with custom handler (for hiding and showing pages) and list
 
 ```js
 Dage.add("page1", myDiv);
-Dage.add("page2", myDiv2);
-Dage.on("page2", function(el) {
-  alert("Navigated to page2");
+Dage.add("notfound", myNotFoundDiv);
+Dage.on("page1", function(el) {
+  alert("Navigated to page1");
 });
+// Not found
 Dage.navigate("page2");
 ```
 
@@ -23,10 +24,14 @@ Manage pages without JavaScript? No problem.
 <div data-page="page1" data-active="">
   Page 1...
   <button data-navigate="page2">Go to page 2</button>
+  <button data-navigate="page3">Go somewhere</button>
 </div>
 <div data-page="page2">
   Page 2...
   <button data-navigate="page2">Go back to page 1</button>
+</div>
+<div data-page="notfound">
+  The page you want to enter does not exist!!!
 </div>
 ```
 
