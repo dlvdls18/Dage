@@ -1,13 +1,14 @@
 var Dage = {
-  ver: 1.4,
+  ver: 1.5,
   $: {},
   l: [],
   a: null,
   _s: false,
   _() {
     Dage.p = document.querySelectorAll("[data-page]");
-    this.l.forEach(function(el) {
-      Dage.p.push(el);
+    this.l.forEach(function(p) {
+      p[0].setAttribute("data-page", p[1]);
+      Dage.p.push(p[0]);
     });
     Dage.p.forEach(function(el) {
       if(el.getAttribute("data-active") != null) Dage.f1(el);
