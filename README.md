@@ -36,6 +36,11 @@ Manage pages without JavaScript? No problem.
 ```
 
 # Documentation
+### Get version
+```js
+Dage.ver;
+```
+
 ## Page
 ### Assigning element as page
 ```html
@@ -130,6 +135,48 @@ Dage.isSilent();
 ### Get all listener
 ```js
 Dage.$;
+```
+
+### Set on navigate before listener
+```js
+// will not fired when silent
+Dage.setBeforeChange(function(name) {});
+```
+
+### Set on navigate after listener
+```js
+// will not fired when silent
+Dage.setAfterChange(function(name) {});
+```
+
+### Set on `Dage.show` listener
+```js
+Dage.setOnShow(function(name) {});
+```
+
+### Set on `Dage.hide` listener
+```js
+Dage.setOnHide(function(name) {});
+```
+
+### Get on navigate before listener
+```js
+Dage.ocb;
+```
+
+### Get on navigate after listener
+```js
+Dage.oca;
+```
+
+### Get on `Dage.show` listener
+```js
+Dage.os;
+```
+
+### Get on `Dage.hide` listener
+```js
+Dage.oh;
 ```
 
 ## Handler
