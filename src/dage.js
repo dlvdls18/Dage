@@ -28,7 +28,7 @@ var Dage = {
       Dage.navigate(e.target.getAttribute("data-navigate"));
     });
   },
-  ocb() {}, oca() {}, os() {}, oh() {}
+  ocb() {}, oca() {}, os() {}, oh() {},
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
@@ -44,6 +44,7 @@ var Dage = {
     if(this.$[name] && !this._s) this.$[name].call(this);
     if(!this._s) this.oca(name);
     this.a = name;
+    if(!this.$[name] && this.$.notfound) Dage.navigate("notfound");
   },
   show(name) {
     if(this.$[name] && !this._s) this.$[name].call(this);
