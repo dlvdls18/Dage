@@ -1,4 +1,5 @@
 var Dage = {
+  ver: 1.2,
   $: {},
   l: [],
   a: null,
@@ -27,18 +28,21 @@ var Dage = {
       Dage.navigate(e.target.getAttribute("data-navigate"));
     });
   },
+  ocb() {}, oca() {}, os() {}, oh() {}
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
     this.l.push(el);
   },
   navigate(name) {
+    if(!this._s) this.ocb(name);
     this.p.forEach(function(el) {
       var n = el.getAttribute("data-page");
       if(n == name) Dage.f1(el);
       else Dage.f0(el);
     });
     if(this.$[name] && !this._s) this.$[name].call(this);
+    if(!this._s) this.oca(name);
     this.a = name;
   },
   show(name) {
@@ -47,12 +51,14 @@ var Dage = {
       var n = el.getAttribute("data-page");
       if(n == name) Dage.f1(el);
     });
+    this.os(name);
   },
   hide(name) {
     this.p.forEach(function(el) {
       var n = el.getAttribute("data-page");
       if(n == name) Dage.f0(el);
     });
+    this.oh(name);
   },
   silent() {
     this._s = true;
@@ -80,6 +86,18 @@ var Dage = {
   },
   setNavigationHandler(f) {
     this.nh = f;
+  },
+  setBeforeChange(f) {
+    this.ocb = f;
+  },
+  setAfterChange(f) {
+    this.oca = f;
+  },
+  setOnShow(f) {
+    this.os = f;
+  },
+  setOnHide(f) {
+    this.oh = f;
   }
 }
 
