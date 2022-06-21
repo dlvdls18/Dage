@@ -122,6 +122,11 @@ Dage.notify();
 Dage.isSilent();
 ```
 
+### Toggle silent state
+```js
+(Dage.isSilent()?Dage.notify():Dage.silent());
+```
+
 ### Get all listener
 ```js
 Dage.$;
