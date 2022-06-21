@@ -133,7 +133,7 @@ Dage.$;
 // fired when navigated and the current page matches the name
 Dage.setShowHandler(function(el) {
   // default
-  el.style.display = "block';
+  el.style.display = "block";
 });
 ```
 
