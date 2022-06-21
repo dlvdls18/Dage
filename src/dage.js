@@ -1,5 +1,5 @@
 var Dage = {
-  ver: 1.2,
+  ver: 1.4,
   $: {},
   l: [],
   a: null,
@@ -28,11 +28,11 @@ var Dage = {
       Dage.navigate(e.target.getAttribute("data-navigate"));
     });
   },
-  ocb() {}, oca() {}, os() {}, oh() {},
+  ocb() {}, oca() {}, os() {}, oh() {}, nf() {},
   add(el, name) {
     if(name) el.setAttribute("data-page", name);
     this.p.push(el);
-    this.l.push(el);
+    this.l.push([el, name]);
   },
   navigate(name) {
     if(!this._s) this.ocb(name);
@@ -44,7 +44,10 @@ var Dage = {
     if(this.$[name] && !this._s) this.$[name].call(this);
     if(!this._s) this.oca(name);
     this.a = name;
-    if(!this.$[name] && this.$.notfound) Dage.navigate("notfound");
+    if(!this.$[name] && this.$.notfound) {
+      Dage.navigate("notfound");
+      Dage.nf(name);
+    }
   },
   show(name) {
     if(this.$[name] && !this._s) this.$[name].call(this);
@@ -99,6 +102,17 @@ var Dage = {
   },
   setOnHide(f) {
     this.oh = f;
+  },
+  setPageActive(name, s) {
+    var n = this.l.map(function(p){return p[1]});
+    var e = this.l.map(function(p){return p[0]});
+    var i = n.indexOf(name);
+    if(i == -1) return;
+    if(s) e[i].setAttribute("data-active", "");
+    else e[i].removeAttribute("data-active");
+  },
+  setOnPageNotFound(f) {
+    this.nf = f;
   }
 }
 
