@@ -6,7 +6,7 @@ Basic HTML &amp; JavaScript Page Management.
 Use `Dage` to your Single Page Application (SPA) easily.
 
 `Dage` is a simple router-like page management which is useful for **SPA**.
-Navigate to any page with custom handler (attribute "hidden" by default) and listener.
+Navigate to any page with custom handler (for hiding and showing pages) and listener.
 
 ```js
 Dage.add("page1", ...);
