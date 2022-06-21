@@ -150,13 +150,13 @@ Dage.isSilent();
 Dage.$;
 ```
 
-### Set on navigate before listener
+### Set `on navigate before` listener
 ```js
 // will not fired when silent
 Dage.setBeforeChange(function(name) {});
 ```
 
-### Set on navigate after listener
+### Set `on navigate after` listener
 ```js
 // will not fired when silent
 Dage.setAfterChange(function(name) {});
@@ -172,12 +172,12 @@ Dage.setOnShow(function(name) {});
 Dage.setOnHide(function(name) {});
 ```
 
-### Get on navigate before listener
+### Get `on navigate before` listener
 ```js
 Dage.ocb;
 ```
 
-### Get on navigate after listener
+### Get `on navigate after` listener
 ```js
 Dage.oca;
 ```
@@ -190,6 +190,16 @@ Dage.os;
 ### Get on `Dage.hide` listener
 ```js
 Dage.oh;
+```
+
+### Set `on page not found` listener
+```js
+Dage.setOnPageNotFound(function(name) {});
+```
+
+### Get `on page not found` listener
+```js
+Dage.nf;
 ```
 
 ## Handler
