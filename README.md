@@ -36,6 +36,11 @@ Manage pages without JavaScript? No problem.
 ```
 
 # Documentation
+### Get version
+```js
+Dage.ver; // float
+```
+
 ## Page
 ### Assigning element as page
 ```html
@@ -48,6 +53,13 @@ Manage pages without JavaScript? No problem.
 ```html
 <div data-page="MyPage" data-active="">
   Hello
+</div>
+```
+
+### Assign page as `Not Found`
+```html
+<div data-page="notfound">
+  I don't think that page exists...
 </div>
 ```
 
@@ -74,6 +86,7 @@ Dage.a;
 ## Navigation
 ### Navigate to page
 ```js
+// If page not found, page "notfound" will be showed
 Dage.navigate(name);
 ```
 
@@ -217,32 +230,4 @@ Dage.setNavigationHandler(function(el) {
 ### Get navigation handler
 ```js
 Dage.nh;
-```
-
-# Others
-
-```
-Dage.$   -> all page listener (object)
-Dage._   -> real Dage.update (function)
-Dage.l   -> local pages (array)
-Dage.a   -> active page (string)
-Dage._s  -> silent state (boolean)
-Dage.f1  -> func 1 [show handler] (function)
-Dage.f0  -> func 0 [hide handler] (function)
-Dage.nh  -> navigation handler (function)
-Dage.ocb -> on change before (function)
-Dage.oca -> on change after (function)
-Dage.os  -> on show (function)
-Dage.oh  -> on hide (function)
-```
-
-***
-
-**NOTE:**
-The method `Dage.isSilent` returns new boolean and does not affect the silent state when modified.
-
-***
-
-```js
-Dage.ver; // return file version (float)
 ```
