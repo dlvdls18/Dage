@@ -9,8 +9,8 @@ Use `Dage` to your Single Page Application (SPA) easily.
 Navigate to any page with custom handler (for hiding and showing pages) and listener.
 
 ```js
-Dage.add("page1", ...);
-Dage.add("page2", ...);
+Dage.add("page1", myDiv);
+Dage.add("page2", myDiv2);
 Dage.on("page2", function(el) {
   alert("Navigated to page2");
 });
