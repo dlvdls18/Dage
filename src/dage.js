@@ -1,3 +1,4 @@
+// https://github.com/dlvdls18/Dage
 var Dage = {
   ver: 1.5,
   $: {},
