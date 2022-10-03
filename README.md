@@ -49,6 +49,7 @@ Dage.ver; // float
 ## Page
 ### Assigning element as page
 ```html
+<!-- attribute data-page -->
 <div data-page="MyPage">
   Hello
 </div>
@@ -56,6 +57,7 @@ Dage.ver; // float
 
 ### Show the element by default
 ```html
+<!-- attribute data-active -->
 <div data-page="MyPage" data-active="">
   Hello
 </div>
@@ -63,6 +65,7 @@ Dage.ver; // float
 
 ### Assign page as `Not Found`
 ```html
+<!-- data-page as notfound -->
 <div data-page="notfound">
   I don't think that page exists...
 </div>
