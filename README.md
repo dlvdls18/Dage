@@ -1,4 +1,4 @@
-# <small>:books: Dage</small>
+# :books: Dage
 
 A simple and lightweight page router for your single-page-applications.
 
