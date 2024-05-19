@@ -1,257 +1,126 @@
-# Dage
+# :books: Dage
 
-![Dage](dage.png)
-
-Basic HTML &amp; JavaScript Page Management.
-Use `Dage` to your Single Page Application (SPA) easily.
-
-`Dage` is a simple router-like page management which is useful for **SPA**.
-Navigate to any page with custom handler (for hiding and showing pages) and listener.
-
-```js
-Dage.add("page1", myDiv);
-Dage.add("notfound", myNotFoundDiv);
-Dage.on("page1", function(el) {
-  alert("Navigated to page1");
-});
-// Not found
-Dage.navigate("page2");
-```
-
-Manage pages without JavaScript? No problem.
+A simple and lightweight page router for your single-page-applications.
 
 ```html
-<div data-page="page1" data-active="">
-  Page 1...
-  <button data-navigate="page2">Go to page 2</button>
-  <button data-navigate="page3">Go somewhere</button>
+<!-- Page 1 -->
+<div data-page="page-1" data-active="">
+  <p>You're currently in page 1</p>
+  
+  <!-- Navigate to page 2 -->
+  <button data-navigate="page-2">Go to page 2</button>
+  
+  <!-- Does not exist -->
+  <button data-navigate="page-3">Go somewhere</button>
 </div>
-<div data-page="page2">
-  Page 2...
-  <button data-navigate="page2">Go back to page 1</button>
+
+<!-- Page 2 -->
+<div data-page="page-2">
+  <p>You're currently in page 2</p>
+  
+  <!-- Navigate back to page 1 -->
+  <button data-navigate="page-2">Go back to page 1</button>
 </div>
+
+<!-- Fallback page -->
 <div data-page="notfound">
-  The page you want to enter does not exist!!!
+  <p>Uh oh, page not found...</p>
 </div>
 ```
 
-# Installation
+# :package: Installation
+
 ```html
-<script src="https://cdn.jsdelivr.net/gh/dlvdls18/Dage/src/dage.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dlvdls18/Dage/dist/dage.min.js"></script>
 ```
 
-# Documentation
-### Get version
-```js
-Dage.ver; // float
-```
+# Documentation: `HTML`
 
-## Page
-### Assigning element as page
+## Pages
+
+To assign a page, add the attribute `data-page`.
+
 ```html
-<!-- attribute data-page -->
-<div data-page="MyPage">
-  Hello
-</div>
+<div data-page="page-name"></div>
 ```
 
-### Show the element by default
+To show the page by default, add the attribute `data-active`.
+
 ```html
-<!-- attribute data-active -->
-<div data-page="MyPage" data-active="">
-  Hello
-</div>
+<div data-active="" data-page="page-name"></div>
 ```
 
-### Assign page as `Not Found`
+## Navigators
+
+To assign a navigator, add the attribute `data-navigate`.
+
 ```html
-<!-- data-page as notfound -->
-<div data-page="notfound">
-  I don't think that page exists...
-</div>
+<button data-navigate="page-name"><button>
 ```
 
-### Add a page
-```js
-Dage.add(element, name);
+# Documentation: `Javascript`
+
+## Pages
+
+#### Add new page by element
+
+```ts
+Dage.add(HTMLElement: element);
 ```
 
-### Reselect and update all `data-page` and `data-navigate` &amp; set all pages default visibility
-```js
-Dage.update();
+#### Remove a page by element
+
+```its
+Dage.remove(HTMLElement: element);
 ```
 
-### Get all pages that assigned using `Dage.add`
+#### Get current active page
+
 ```js
-Dage.l;
+// String: page name
+Dage.active;
 ```
 
-### Get active page
-```js
-Dage.a;
+#### Navigate through a page
+
+```ts
+Dage.navigate(String: page_name);
 ```
 
-### Set local page default visibility to active
+## Listeners
+
+#### `onpagevisible` listener
+
+This event is called when the page will be visible. It can be used to define how would the page appear when visible.
+
 ```js
-// only work with pages created with Dage.add
-Dage.setPageActive(name);
+Dage.pages["page_name"].onpagevisible = Function(page_name, instance);
 ```
 
-## Navigation
-### Navigate to page
+#### `onpagehidden` listener
+
+This event is called when the page will be hidden. It can be used to define how would the page appear when hidden.
+
 ```js
-// If page not found, page "notfound" will be showed
-Dage.navigate(name);
+Dage.pages["page_name"].onpagehidden = Function(page_name, instance);
 ```
 
-### Show a page
-```js
-// Active page will not change when using this method
-Dage.show(name);
+#### Set page listener
+
+```ts
+Dage.on("page_name", Function: callback);
 ```
 
-### Hide a page
-```js
-Dage.hide(name);
+#### Remove page listener
+
+```ts
+Dage.off("page_name");
 ```
 
-### Get all pages
-```js
-Dage.p;
-```
+#### `onchanged` listener
 
-### Listener
-### Add page listener
-```js
-// will not fired when silent
-Dage.on(name, function(el) {
-  ...
-});
-```
+This event is called when navigated.
 
-### Remove page listener
-```js
-Dage.off(name);
-```
-
-### Turn silent on
-```js
-Dage.silent();
-```
-
-### Turn silent off
-```js
-Dage.notify();
-```
-
-### Get silent state
-```js
-Dage.isSilent();
-```
-
-### Toggle silent state
-```js
-(Dage.isSilent()?Dage.notify():Dage.silent());
-```
-
-### Get all listener
-```js
-Dage.$;
-```
-
-### Set `on navigate before` listener
-```js
-// will not fired when silent
-Dage.setBeforeChange(function(name) {});
-```
-
-### Set `on navigate after` listener
-```js
-// will not fired when silent
-Dage.setAfterChange(function(name) {});
-```
-
-### Set on `Dage.show` listener
-```js
-Dage.setOnShow(function(name) {});
-```
-
-### Set on `Dage.hide` listener
-```js
-Dage.setOnHide(function(name) {});
-```
-
-### Get `on navigate before` listener
-```js
-Dage.ocb;
-```
-
-### Get `on navigate after` listener
-```js
-Dage.oca;
-```
-
-### Get on `Dage.show` listener
-```js
-Dage.os;
-```
-
-### Get on `Dage.hide` listener
-```js
-Dage.oh;
-```
-
-### Set `on page not found` listener
-```js
-Dage.setOnPageNotFound(function(name) {});
-```
-
-### Get `on page not found` listener
-```js
-Dage.nf;
-```
-
-## Handler
-### Set show handler
-```js
-// fired when navigated and the current page matches the name
-Dage.setShowHandler(function(el) {
-  // default
-  el.style.display = "block";
-});
-```
-
-### Set hide handler
-```js
-// fired when navigated and the current page does not match the name
-Dage.setHideHandler(function(el) {
-  // default
-  el.style.display = "none";
-});
-```
-
-### Get show handler
-```js
-Dage.f1;
-```
-
-### Get hide handler
-```js
-Dage.f0;
-```
-
-### Set navigation handler
-```js
-Dage.setNavigationHandler(function(el) {
-  // default
-  // navigate when element with attribute data-navigate clicked
-  el.addEventListener("click", function(e) {
-    Dage.navigate(e.target.getAttribute("data-navigate"));
-  });
-});
-```
-
-### Get navigation handler
-```js
-Dage.nh;
+```ts
+Dage.onchanged = Function(page_name, instance);
 ```
